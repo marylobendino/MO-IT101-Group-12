@@ -42,7 +42,7 @@ public class MotorPHEmployeePortal {
         int employeeNumber;
         Employee employee = null;
         
-    // Load attendance data from a txt file and store in a list
+    // Load attendance data from a Attendance.txt file and store in a list
         List<Attendance> attendanceList = readAttendanceData("C:\\Users\\vncbv\\Desktop\\MotorPHApp\\Attendance.txt");
 
     // Loop to ask for employee number until a valid employee is found
@@ -220,8 +220,8 @@ public class MotorPHEmployeePortal {
     }
     // Method to retrieve employee data based on employee number    
                     public static Employee getEmployeeData(int employeeNumber) throws FileNotFoundException {
-                    String filePath = ("C:\\Users\\vncbv\\Desktop\\MotorPHApp\\MotorPHEmployeeData.txt"); 
-                    try (Scanner fileScanner = new Scanner(new File(filePath))) // Use Scanner to read Employee.txt 
+                    String filePath = ("C:\\Users\\vncbv\\Desktop\\MotorPHApp\\MotorPHEmployeeData.txt"); ////use MotorPHEmployeeData txt file
+                    try (Scanner fileScanner = new Scanner(new File(filePath))) // Use Scanner to read MotorPHEmployeeData.txt 
                     {
                     while (fileScanner.hasNextLine()) {
                     String line = fileScanner.nextLine();
