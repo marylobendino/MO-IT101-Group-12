@@ -9,9 +9,9 @@ The **MotorPH Employee Portal** is a Java-based application that allows employee
 
 ### Main Functionalities:
 1. **Display Employee Details**: Provides employee-specific information such as name, salary, and employment details.
-2. **View Hours Worked Per Week**: Shows the employee's attendance and total worked hours within a specified date range.
+2. **View Hours Worked Per Week**: Shows the employee's attendance and total worked hours within a specified date range. Note: I did not account the one-hour lunch break.
 3. **Calculate Gross Weekly Salary**: Calculates the employee's gross salary based on the hours worked in a week.
-4. **Calculate Net Weekly Salary**: Computes the net salary after deductions such as SSS, PhilHealth, Pagibig, and withholding tax.
+4. **Calculate Net Weekly Salary**: Computes the net salary after deductions such as SSS, PhilHealth, Pagibig, and Withholding tax.
 
 ## Requirements
 
