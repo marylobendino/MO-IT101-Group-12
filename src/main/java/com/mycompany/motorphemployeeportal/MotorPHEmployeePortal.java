@@ -39,26 +39,30 @@ public class MotorPHEmployeePortal {
     deductions.add(new PagibigDeduction());
     
     // Initialize employeeNumber and employee objects
-        int employeeNumber;
-        Employee employee = null;
-        
-    // Load attendance data from a Attendance.txt file and store in a list
-        List<Attendance> attendanceList = readAttendanceData("C:\\Users\\vncbv\\Desktop\\MotorPHApp\\Attendance.txt");
+    int employeeNumber = -1;
+    Employee employee = null;
+
+    // Load attendance data from an Attendance.txt file and store it in a list
+    List<Attendance> attendanceList = readAttendanceData("C:\\Users\\vncbv\\Desktop\\MotorPHApp\\Attendance.txt");
 
     // Loop to ask for employee number until a valid employee is found
-        while (employee == null) {
-            System.out.print("\nPlease enter your Employee Number: ");
+    while (employee == null) {
+        System.out.print("\nPlease enter your Employee Number: ");
+        
+        // Try-catch block to validate that the input is an integer
+        try {
             employeeNumber = Integer.parseInt(scanner.nextLine());
-            try {
-    // Fetch employee data based on the input employee number
-                employee = getEmployeeData(employeeNumber);
-                if (employee == null) {
-                    System.out.println("Employee not found. Please try again.");
-                }
-            } catch (FileNotFoundException e) {
-                System.out.println("Error: Employee Not Found");
+            // Fetch employee data based on the input employee number
+            employee = getEmployeeData(employeeNumber);
+            if (employee == null) {
+                System.out.println("Employee not found. Please try again.");
             }
+        } catch (NumberFormatException e) {
+            System.out.println("Error: Invalid input. Please enter a valid employee number (integer).");
+        } catch (FileNotFoundException e) {
+            System.out.println("Error: Employee data file not found.");
         }
+    }
 
     // Main menu loop to display options to the employee
         while (true) {
@@ -107,6 +111,7 @@ public class MotorPHEmployeePortal {
         }
     break;
     
+        
     // Calculate and display the employee's gross weekly salary
                 case 3:
                     System.out.println("\nNOTE: Please enter date ranges from Monday to Sunday");
@@ -364,4 +369,3 @@ public class MotorPHEmployeePortal {
 }
 
 }
-    
